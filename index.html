@@ -1324,6 +1324,9 @@
         var original = window.location.href.substr(0, window.location.href.indexOf('#'))
         history.replaceState({}, document.title, original);
     }
+    $('.modal').on('close-modal',function () {
+    if(location.hash=='#modal')window.history.back();
+    });
 
     // $('.modal').on('hidden.bs.modal', function () {
     //     revertToOriginalURL();
