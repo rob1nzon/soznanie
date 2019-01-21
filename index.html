@@ -1313,9 +1313,11 @@
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
     <script>
-        $('#myModal').on('show.bs.modal', function (e) {
-    var loadurl = $(e.relatedTarget).data('load-url');
-    $(this).find('.modal-body').load(loadurl);
+        $(document).ready(function(){
+   $(window.location.hash).modal('show');
+   $('a[data-toggle="modal"]').click(function(){
+      window.location.hash = $(this).attr('href');
+   });
 });
 </script>
     <!-- Theme JavaScript -->
