@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Sheetrock.js 1.0 Example 3</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="//code.jquery.com/jquery-1.11.0.js"
+    
+  ></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.min.js"></script>
+      <script type="text/javascript" src="https://chriszarate.github.io/sheetrock/dist/sheetrock.min.js"></script>
+
+  <style id="compiled-css" type="text/css">
+      
+  </style>
+
+
+  <!-- TODO: Missing CoffeeScript 2 -->
+
+  <script type="text/javascript">
+
+
+    var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1ElwfwObZrl5y2e188XTNbtg8N8tyVsiFlH3Apdfc7eg/edit#gid=0';
+
+// Compile the Handlebars template for HR leaders.
+var HRTemplate = Handlebars.compile($('#hr-template').html());
+
+// Load top five HR leaders.
+$('#hr').sheetrock({
+  url: mySpreadsheet,
+  query: "select A,B,C,D,E,F",
+  fetchSize: 2,
+  rowTemplate: HRTemplate
+});
+
+
+    });
+
+</script>
+
+</head>
+<body>
+h4>Tables</h4>
+<ol id="hr">
+  <script id="hr-template" type="text/x-handlebars-template">
+      <h2>{{cells.quest}}</h2> 
+      <div class="form-check">
+  		<input class="form-check-input" type="radio" name="ques{{cells.num}}" id="exampleRadios1" value="option1" checked>
+  		<label class="form-check-label" for="exampleRadios1">
+    	{{cells.a}}
+  		</label>
+			</div>
+      <div class="form-check">
+  		<input class="form-check-input" type="radio" name="ques{{cells.num}}" id="exampleRadios2" value="option1" checked>
+  		<label class="form-check-label" for="exampleRadios1">
+    	{{cells.b}}
+  		</label>
+			</div>
+      <div class="form-check">
+  		<input class="form-check-input" type="radio" name="ques{{cells.num}}" id="exampleRadios3" value="option1" checked>
+  		<label class="form-check-label" for="exampleRadios1">
+    	{{cells.c}}
+  		</label>
+			</div>
+      <div class="form-check">
+  		<input class="form-check-input" type="radio" name="ques{{cells.num}}" id="exampleRadios4" value="option1" checked>
+  		<label class="form-check-label" for="exampleRadios1">
+    	{{cells.d}}
+  		</label>
+			</div>
+  </script>
+</ol>
+
+  
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "09sknz54"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+</body>
+</html>
