@@ -52,7 +52,7 @@ $('#hr').sheetrock({
 
 </head>
 <body>
-h4>Tables</h4>
+<h4>Tables</h4>
 <ol id="hr">
   <script id="hr-template" type="text/x-handlebars-template">
       <h2>{{cells.quest}}</h2> 
@@ -83,18 +83,6 @@ h4>Tables</h4>
   </script>
 </ol>
 
-  
-  <script>
-    // tell the embed parent frame the height of the content
-    if (window.parent && window.parent.parent){
-      window.parent.parent.postMessage(["resultsFrame", {
-        height: document.body.getBoundingClientRect().height,
-        slug: "09sknz54"
-      }], "*")
-    }
-
-    // always overwrite window.name, in case users try to set it manually
-    window.name = "result"
-  </script>
+ 
 </body>
 </html>
