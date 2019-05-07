@@ -28,7 +28,7 @@
 
   <script type="text/javascript">
 
-
+$(window).load(function(){
     var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1ElwfwObZrl5y2e188XTNbtg8N8tyVsiFlH3Apdfc7eg/edit#gid=0';
 
 // Compile the Handlebars template for HR leaders.
@@ -41,7 +41,7 @@ $('#hr').sheetrock({
   fetchSize: 2,
   rowTemplate: HRTemplate
     });
-
+});
 </script>
 
 </head>
