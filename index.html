@@ -1411,7 +1411,6 @@
     }
     $('.modal').on('close-modal',function () {
     if(location.hash=='#modal')window.history.back();
-    window.location.hash = '/';
     });
 
     // $('.modal').on('hidden.bs.modal', function () {
@@ -1420,12 +1419,11 @@
 
     $('.modal').on('hide.bs.modal', function () {
     if(location.hash=='#modal')window.history.back();
-    window.location.hash = '/';
     });
 
     $(window).on('popstate', function (event) {  //pressed back button
         if(event.state!==null)$('.modal').modal('hide');
-        window.location.hash = '/';
+        window.history.back();
     });
 
 });
