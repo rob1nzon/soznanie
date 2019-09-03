@@ -1654,7 +1654,7 @@
             history.replaceState({}, document.title, original);
         }
         $('.modal').on('close-modal',function () {
-        if(location.hash=='#modal')window.history.back();
+        if(location.hash=='#modal')window.history.back();revertToOriginalURL();
         });
         // $('.modal').on('hidden.bs.modal', function () {
         //     revertToOriginalURL();
