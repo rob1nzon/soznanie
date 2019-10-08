@@ -1671,7 +1671,7 @@
  
 window.mishaProcessResult = function( data ) {
 	for( x in data.data ){
-		container.innerHTML += '<li><img src="' + data.data[x].images.low_resolution.url + '"></li>';
+		container.innerHTML += '<li><img href="'+data.data[x].link+'"src="' + data.data[x].images.low_resolution.url + '"></li>';
 	}
 }
  
